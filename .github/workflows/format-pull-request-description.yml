@@ -12,7 +12,7 @@ jobs:
       - name: Remove comments from PR description
         uses: actions/checkout@v3
       - name: Update PR Description
-        uses: nefrob/pr-description@master
+        uses: piaskowyk/pr-description@master
         with:
           content: ""
           regex: "<!-- .* -->"
