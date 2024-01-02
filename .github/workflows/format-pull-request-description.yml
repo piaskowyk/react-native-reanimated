@@ -6,7 +6,7 @@ on:
       - opened
 
 jobs:
-  update-pr-description:
+  format-pull-request-description:
     runs-on: ubuntu-latest
     steps:
       - name: Remove comments from PR description
@@ -14,7 +14,7 @@ jobs:
       - name: Update PR Description
         uses: nefrob/pr-description@master
         with:
-          content: " "
-          regex: "<!-- .* -->\n"
+          content: ""
+          regex: "<!-- .* -->"
           regexFlags: img
           token: ${{ secrets.GITHUB_TOKEN }}
