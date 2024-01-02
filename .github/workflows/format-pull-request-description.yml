@@ -15,6 +15,6 @@ jobs:
         uses: software-mansion-labs/pr-description@main
         with:
           content: ""
-          regex: "<!-- .* -->"
+          regex: "<!-- .* -->\n"
           regexFlags: img
           token: ${{ secrets.GITHUB_TOKEN }}
