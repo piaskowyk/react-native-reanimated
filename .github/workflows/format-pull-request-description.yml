@@ -1,11 +1,9 @@
 name: Format Pull Request Description
 
 on:
-  workflow_run:
-    workflows:
-      - "Pull Request Created"
+  pull_request:
     types:
-      - completed
+      - opened
 
 jobs:
   update-pr-description:
