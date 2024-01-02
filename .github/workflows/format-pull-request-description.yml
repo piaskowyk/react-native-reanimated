@@ -2,6 +2,9 @@ name: Format Pull Request Description
 
 on:
   pull_request:
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   update-pr-description:
@@ -12,7 +15,7 @@ jobs:
       - name: Update PR Description
         uses: nefrob/pr-description@v1.1.1
         with:
-          content: ""
+          content: " "
           regex: "<!-- .* -->"
-          regexFlags: i
+          regexFlags: img
           token: ${{ secrets.GITHUB_TOKEN }}
