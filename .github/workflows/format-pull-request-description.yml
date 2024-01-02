@@ -1,12 +1,11 @@
 name: Format Pull Request Description
 
 on:
-  pull_request:
+  workflow_run:
+    workflows:
+      - "Pull Request Created"
     types:
-      - synchronize
-  push:
-    branches:
-      - master
+      - completed
 
 jobs:
   update-pr-description:
@@ -15,7 +14,7 @@ jobs:
       - name: Remove comments from PR description
         uses: actions/checkout@v3
       - name: Update PR Description
-        uses: piaskowyk/pr-description@master
+        uses: nefrob/pr-description@master
         with:
           content: " "
           regex: "<!-- .* -->\n"
