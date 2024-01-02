@@ -1,0 +1,18 @@
+name: Format Pull Request Description
+
+on:
+  pull_request:
+
+jobs:
+  update-pr-description:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove comments from PR description
+        uses: actions/checkout@v3
+      - name: Update PR Description
+        uses: nefrob/pr-description@v1.1.1
+        with:
+          content: ""
+          regex: "<!-- .* -->"
+          regexFlags: i
+          token: ${{ secrets.GITHUB_TOKEN }}
